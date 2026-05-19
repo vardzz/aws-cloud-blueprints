@@ -1,0 +1,38 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Automated Cloud Template for Native AWS S3 Static Website Hosting"
+
+Resources:
+  # The exact S3 Bucket storage setup you configured manually
+  PortfolioStaticBucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      BucketName: !Sub "${AWS::StackName}-portfolio-site"
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: error.html
+      # Enabling public access block configurations for public hosting overrides
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
+
+  # The bucket policy that allows anyone on the internet to view your static portfolio files
+  PortfolioBucketPolicy:
+    Type: "AWS::S3::BucketPolicy"
+    Properties:
+      Bucket: !Ref PortfolioStaticBucket
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Sid: PublicReadGetObject
+            Effect: Allow
+            Principal: "*"
+            Action: "s3:GetObject"
+            Resource: !Sub "${PortfolioStaticBucket.Arn}/*"
+
+Outputs:
+  WebsiteURL:
+    Description: "The active URL of your hosted static website"
+    Value: !GetAtt PortfolioStaticBucket.WebsiteURL
