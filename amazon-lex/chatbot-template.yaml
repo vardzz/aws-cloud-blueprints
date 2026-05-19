@@ -212,7 +212,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: "You are very welcome! Helping you navigate Jericho's architecture is exactly what I'm built for. Let me know if you need any more details about his stack or availability.
+                          Value: "You are very welcome! Helping you navigate Jericho's architecture is exactly what I'm built for. Let me know if you need any more details about his stack or availability."
                 NextStep:
                   DialogAction:
                     Type: "CloseIntent"
@@ -229,7 +229,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: "Why do Cloud Engineers love dark mode? Because light attracts bugs! Speaking of avoiding bugs, would you like to take a look at Jericho's clean, fully-optimized Next.js and AWS works?
+                          Value: "Why do Cloud Engineers love dark mode? Because light attracts bugs! Speaking of avoiding bugs, would you like to take a look at Jericho's clean, fully-optimized Next.js and AWS works?"
                 NextStep:
                   DialogAction:
                     Type: "CloseIntent"
