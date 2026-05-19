@@ -162,3 +162,74 @@ Resources:
                 NextStep:
                   DialogAction:
                     Type: "CloseIntent"
+
+              #INTENT: BOT WELL-BEING CHECK (EASTER EGG)
+            - Name: "AskBotWellBeing"
+              Description: "Outputs how the bot is doing in a lighthearted manner, showcasing its engineered personality and contextual awareness."
+              SampleUtterances:
+                - Utterance: "How are you?"
+                - Utterance: "How is it going?"
+                - Utterance: "Are you doing well?"
+                - Utterance: "What's up?"
+              IntentClosingSetting:
+                ClosingResponse:
+                  MessageGroupsList:
+                    - Message:
+                        PlainTextMessage:
+                          Value: "I'm functioning perfectly at 100% efficiency! Thanks for asking. I am currently keeping track of Jericho's portfolio, tech stack, and schedule. How can I help you navigate his work today?"
+                NextStep:
+                  DialogAction:
+                    Type: "CloseIntent"
+
+              #INTENT: BOT ANSWERING ITS CAPABILITIES (EASTER EGG)
+            - Name: "AskBotCapabilities"
+              Description: "Outputs on what can the bot really do, showcasing its engineered personality and contextual awareness."
+              SampleUtterances:
+                - Utterance: "What can you do?"
+                - Utterance: "Help me"
+                - Utterance: "What are your commands?"
+                - Utterance: "How do i use this?"
+              IntentClosingSetting:
+                ClosingResponse:
+                  MessageGroupsList:
+                    - Message:
+                        PlainTextMessage:
+                          Value: "Think of me as your direct pipeline to Jericho's professional profile. You can ask me about his tech stack, view his notable engineering works, get his active contact channels, or type 'schedule a meeting' to seamlessly book an interview slot!"
+                NextStep:
+                  DialogAction:
+                    Type: "CloseIntent"
+
+            #INTENT: BOT EXPRESSING GRATITUDE (EASTER EGG)
+            - Name: "ExpressGratitude"
+              Description: "Outputs gratitude to the user when they express thanks, showcasing the bot's engineered personality and contextual awareness."
+              SampleUtterances:
+                - Utterance: "Thank you"
+                - Utterance: "Thanks"
+                - Utterance: "Awesome, thanks!"
+                - Utterance: "Cool, thank you!"
+              IntentClosingSetting:
+                ClosingResponse:
+                  MessageGroupsList:
+                    - Message:
+                        PlainTextMessage:
+                          Value: "You are very welcome! Helping you navigate Jericho's architecture is exactly what I'm built for. Let me know if you need any more details about his stack or availability.
+                NextStep:
+                  DialogAction:
+                    Type: "CloseIntent"
+
+              #INTENT: BOT TELLING A JOKE (EASTER EGG)
+            - Name: "AskBotHumor"
+              Description: "Outputs a humorous response to the user, showcasing the bot's engineered personality and contextual awareness."
+              SampleUtterances:
+                - Utterance: "Tell me a joke"
+                - Utterance: "Make me laugh"
+                - Utterance: "Do you know any jokes?"
+              IntentClosingSetting:
+                ClosingResponse:
+                  MessageGroupsList:
+                    - Message:
+                        PlainTextMessage:
+                          Value: "Why do Cloud Engineers love dark mode? Because light attracts bugs! Speaking of avoiding bugs, would you like to take a look at Jericho's clean, fully-optimized Next.js and AWS works?
+                NextStep:
+                  DialogAction:
+                    Type: "CloseIntent"
