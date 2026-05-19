@@ -29,12 +29,9 @@ Resources:
         ChildDirected: false
       IdleSessionTTLInSeconds: 300
       RoleArn: !GetAtt LexBotExecutionRole.Arn
-      TestBotAliasSettings:
-        SentimentAnalysisSettings:
-          ObjectNotificationReady: false
+      TestBotAliasSettings: {}
       BotLocales:
         - LocaleId: "en_US"
-          NluIntentConfidenceThreshold: 0.40
           Description: "English locale mapping for portfolio NLU system"
 
           # ==========================================
@@ -163,7 +160,7 @@ Resources:
                   DialogAction:
                     Type: "CloseIntent"
 
-              #INTENT: BOT WELL-BEING CHECK (EASTER EGG)
+            # --- INTENT: BOT WELL-BEING CHECK ---
             - Name: "AskBotWellBeing"
               Description: "Outputs how the bot is doing in a lighthearted manner, showcasing its engineered personality and contextual awareness."
               SampleUtterances:
@@ -181,7 +178,7 @@ Resources:
                   DialogAction:
                     Type: "CloseIntent"
 
-              #INTENT: BOT ANSWERING ITS CAPABILITIES (EASTER EGG)
+            # --- INTENT: BOT ANSWERING ITS CAPABILITIES ---
             - Name: "AskBotCapabilities"
               Description: "Outputs on what can the bot really do, showcasing its engineered personality and contextual awareness."
               SampleUtterances:
@@ -199,7 +196,7 @@ Resources:
                   DialogAction:
                     Type: "CloseIntent"
 
-            #INTENT: BOT EXPRESSING GRATITUDE (EASTER EGG)
+            # --- INTENT: BOT EXPRESSING GRATITUDE ---
             - Name: "ExpressGratitude"
               Description: "Outputs gratitude to the user when they express thanks, showcasing the bot's engineered personality and contextual awareness."
               SampleUtterances:
@@ -217,7 +214,7 @@ Resources:
                   DialogAction:
                     Type: "CloseIntent"
 
-              #INTENT: BOT TELLING A JOKE (EASTER EGG)
+            # --- INTENT: BOT TELLING A JOKE ---
             - Name: "AskBotHumor"
               Description: "Outputs a humorous response to the user, showcasing the bot's engineered personality and contextual awareness."
               SampleUtterances:
