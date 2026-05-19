@@ -5,7 +5,11 @@ A centralized library of Infrastructure as Code (IaC) templates engineered to au
 ## 📁 Repository Structure
 
 - `amazon-lex/`
-  - `chatbot-template.yaml`: A complete production blueprint that automatically deploys a multi-intent conversational Natural Language Understanding (NLU) model (`PortfolioAssistant`) along with dedicated IAM execution policies.
+  - `chatbot-template.yaml`: A production-ready Amazon Lex blueprint for a multi-intent conversational assistant with IAM execution policies.
+- `aws-lambda-ses/`
+  - `contact-form-pipeline.yaml`: A serverless contact form pipeline using Lambda, DynamoDB rate limiting, and SES email delivery.
+- `aws-s3-static/`
+  - `static-hosting-template.yaml`: A native S3 static website hosting blueprint with bucket policy and website configuration.
 
 ## 🚀 How to Deploy Templates
 
