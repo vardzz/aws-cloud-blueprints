@@ -32,6 +32,7 @@ Resources:
       TestBotAliasSettings: {}
       BotLocales:
         - LocaleId: "en_US"
+          NluConfidenceThreshold: 0.40
           Description: "English locale mapping for portfolio NLU system"
 
           # ==========================================
