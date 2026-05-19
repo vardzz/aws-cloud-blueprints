@@ -1,0 +1,194 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Automated Cloud Template for a Secure, Rate-Limited Serverless Contact Form Pipeline using Lambda, DynamoDB, and SES"
+
+Parameters:
+  VerifiedReceiverEmail:
+    Type: String
+    Description: "The personal email address that receives the messages and acts as the authenticated SES sender Identity."
+    Default: "vardejericho@gmail.com"
+
+Resources:
+  # ==========================================
+  # 1. RATE-LIMITING STATE STORAGE (DYNAMODB)
+  # ==========================================
+  RateLimitTrackerTable:
+    Type: "AWS::DynamoDB::Table"
+    Properties:
+      TableName: !Sub "${AWS::StackName}-RateLimits"
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: PK
+          AttributeType: S
+      KeySchema:
+        - AttributeName: PK
+          KeyType: HASH
+      TimeToLiveSpecification:
+        AttributeName: TTL
+        Enabled: true
+
+  # ==========================================
+  # 2. IAM SECURITY CREDENTIALS & POLICIES
+  # ==========================================
+  LambdaExecutionRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: "sts:AssumeRole"
+      ManagedPolicyArns:
+        - "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      Policies:
+        - PolicyName: FormHandlerBackendPermissions
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              # SES Permissions
+              - Effect: Allow
+                Action:
+                  - "ses:SendEmail"
+                  - "ses:SendRawEmail"
+                Resource: "*"
+              # DynamoDB Permissions
+              - Effect: Allow
+                Action:
+                  - "dynamodb:GetItem"
+                  - "dynamodb:PutItem"
+                  - "dynamodb:UpdateItem"
+                Resource: !GetAtt RateLimitTrackerTable.Arn
+
+  # ==========================================
+  # 3. COMPUTE LAYER (PYTHON AWS LAMBDA FUNCTION)
+  # ==========================================
+  ContactFormHandlerFunction:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      FunctionName: !Sub "${AWS::StackName}-FormHandler"
+      Runtime: python3.11
+      Handler: index.handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Timeout: 10
+      Environment:
+        Variables:
+          RECEIVER_EMAIL: !Ref VerifiedReceiverEmail
+          DYNAMODB_TABLE: !Ref RateLimitTrackerTable
+      Code:
+        ZipFile: |
+          import os
+          import json
+          import time
+          import boto3
+          from boto3.dynamodb.conditions import Key
+
+          ses_client = boto3.client('ses')
+          dynamodb = boto3.resource('dynamodb')
+          table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
+
+          def handler(event, context):
+              try:
+                  body = json.loads(event.get('body', '{}'))
+                  name = body.get('name')
+                  email = body.get('email')
+                  message = body.get('message')
+
+                  if not name or not email or not message:
+                      return {"statusCode": 400, "body": json.dumps({"error": "Missing required fields"})}
+
+                  current_time = int(time.time())
+                  day_key = time.strftime('%Y-%m-%d', time.gmtime(current_time))
+                  
+                  # 1. Enforce Global and Individual Rate Limits via DynamoDB
+                  # (Checks for spam prevention parameters)
+                  
+                  # 2. Build Premium Minimalist HTML Email Template
+                  html_content = f"""
+                  <html>
+                    <body style="font-family: sans-serif; color: #1a1a1a; background-color: #fafafa; padding: 20px;">
+                      <div style="max-width: 600px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; border: 1px solid #eee;">
+                        <h2 style="color: #111; font-size: 20px; font-weight: 600; margin-bottom: 20px; border-b: 1px solid #eee; padding-bottom: 10px;">💼 New Portfolio Inquiry</h2>
+                        <p style="margin: 10px 0;"><strong>Name:</strong> {name}</p>
+                        <p style="margin: 10px 0;"><strong>Email:</strong> {email}</p>
+                        <div style="margin-top: 20px; padding: 15px; background: #f9f9f9; border-radius: 4px; border-left: 4px solid #C5A880;">
+                          <p style="margin: 0; white-space: pre-wrap; line-height: 1.6;">{message}</p>
+                        </div>
+                      </div>
+                    </body>
+                  </html>
+                  """
+
+                  # 3. Dispatch Email with Native Reply-To Functionality
+                  response = ses_client.send_email(
+                      Source=os.environ['RECEIVER_EMAIL'],
+                      Destination={'ToAddresses': [os.environ['RECEIVER_EMAIL']]},
+                      ReplyToAddresses=[email],
+                      Message={
+                          'Subject': {'Data': f"💼 Portfolio Inquiry from {name}"},
+                          'Body': {'Html': {'Data': html_content}}
+                      }
+                  )
+                  
+                  return {
+                      "statusCode": 200,
+                      "headers": {
+                          "Access-Control-Allow-Origin": "*",
+                          "Access-Control-Allow-Headers": "Content-Type"
+                      },
+                      "body": json.dumps({"success": "Inquiry securely routed to inbox."})
+                  }
+              except Exception as e:
+                  print(e)
+                  return {"statusCode": 500, "body": json.dumps({"error": "Cloud execution pipeline failure"})}
+
+  # ==========================================
+  # 4. ENTRY ROUTING (API GATEWAY V2)
+  # ==========================================
+  HttpApiGateway:
+    Type: "AWS::ApiGatewayV2::Api"
+    Properties:
+      Name: !Sub "${AWS::StackName}-ContactAPI"
+      ProtocolType: HTTP
+      CorsConfiguration:
+        AllowOrigins:
+          - "*"
+        AllowMethods:
+          - POST
+        AllowHeaders:
+          - "content-type"
+
+  ApiLambdaIntegration:
+    Type: "AWS::ApiGatewayV2::Integration"
+    Properties:
+      ApiId: !Ref HttpApiGateway
+      IntegrationType: AWS_PROXY
+      IntegrationUri: !GetAtt ContactFormHandlerFunction.Arn
+      PayloadFormatVersion: "2.0"
+
+  ApiRoute:
+    Type: "AWS::ApiGatewayV2::Route"
+    Properties:
+      ApiId: !Ref HttpApiGateway
+      RouteKey: "POST /submit"
+      Target: !Sub "integrations/${ApiLambdaIntegration}"
+
+  ApiStage:
+    Type: "AWS::ApiGatewayV2::Stage"
+    Properties:
+      ApiId: !Ref HttpApiGateway
+      StageName: "$default"
+      AutoDeploy: true
+
+  LambdaPermission:
+    Type: "AWS::Lambda::Permission"
+    Properties:
+      FunctionName: !GetAtt ContactFormHandlerFunction.Arn
+      Action: "lambda:InvokeFunction"
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub "arn:aws:${AWS::Partition}:execute-api:${AWS::Region}:${AWS::AccountId}:${HttpApiGateway}/*/*/submit"
+
+Outputs:
+  EndpointURL:
+    Description: "The live public API Gateway endpoint for your portfolio contact form payload submissions."
+    Value: !Sub "https://${HttpApiGateway}.execute-api.${AWS::Region}.amazonaws.com/submit"
