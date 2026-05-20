@@ -1,0 +1,3 @@
+template-file-path: amazon-lex/chatbot-template.yaml
+parameters: {}
+tags: {}
