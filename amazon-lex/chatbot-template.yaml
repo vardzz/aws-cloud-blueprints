@@ -47,7 +47,7 @@ Resources:
                             or type 'schedule a meeting' to book an interview!
                 NextStep:
                   DialogAction:
-                    Type: "CloseIntent"
+                    Type: "EndConversation"
 
             - Name: "AskTechStack"
               Description: "Answers inquiries regarding software languages and stack proficiencies."
