@@ -67,7 +67,7 @@ Resources:
                             utilize Blender for 3D modeling and animation.
                 NextStep:
                   DialogAction:
-                    Type: "StartIntent"
+                    Type: "EndConversation"
 
             - Name: "AskWorks"
               Description: "Outputs references to engineered system solutions."
@@ -88,7 +88,7 @@ Resources:
                             in Blender.
                 NextStep:
                   DialogAction:
-                    Type: "StartIntent"
+                    Type: "EndConversation"
 
             - Name: "AskContact"
               Description: "Displays links, profiles, and active direct communication lines."
@@ -130,7 +130,7 @@ Resources:
                             or explore my GitHub organization, Sinkronizze!
                 NextStep:
                   DialogAction:
-                    Type: "StartIntent"
+                    Type: "EndConversation"
 
             - Name: "BookMeeting"
               Description: "Interactive scheduling pipeline utilizing contextual date/time extractions."
@@ -176,7 +176,7 @@ Resources:
                             review this and get back to you shortly.
                 NextStep:
                   DialogAction:
-                    Type: "CloseIntent"
+                    Type: "EndConversation"
 
             - Name: "AskBotWellBeing"
               Description: "Outputs how the bot is doing in a lighthearted manner."
@@ -197,7 +197,7 @@ Resources:
                             navigate his work today?
                 NextStep:
                   DialogAction:
-                    Type: "StartIntent"
+                    Type: "EndConversation"
 
             - Name: "AskBotCapabilities"
               Description: "Outputs on what can the bot really do, showcasing its engineered personality."
@@ -219,7 +219,7 @@ Resources:
                             to seamlessly book an interview slot!
                 NextStep:
                   DialogAction:
-                    Type: "StartIntent"
+                    Type: "EndConversation"
 
             - Name: "ExpressGratitude"
               Description: "Outputs gratitude to the user when they express thanks."
@@ -239,7 +239,7 @@ Resources:
                             if you need any more details about his stack or availability.
                 NextStep:
                   DialogAction:
-                    Type: "StartIntent"
+                    Type: "EndConversation"
 
             - Name: "AskBotHumor"
               Description: "Outputs a humorous response to the user."
@@ -259,7 +259,7 @@ Resources:
                             and AWS works?
                 NextStep:
                   DialogAction:
-                    Type: "StartIntent"
+                    Type: "EndConversation"
 
             - Name: "AskLoveLife"
               Description: "Handles inquiries regarding relationship status, showcasing a lighthearted easter egg about Kzelyn."
@@ -282,4 +282,4 @@ Resources:
                             a definitive full-stack duo!
                 NextStep:
                   DialogAction:
-                    Type: "StartIntent"
+                    Type: "EndConversation"
