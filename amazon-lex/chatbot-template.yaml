@@ -40,11 +40,35 @@ Resources:
                     - Message:
                         PlainTextMessage:
                           Value: >-
-                            I didn't quite catch that. I am Jericho's Portfolio
-                            Assistant, and I am trained to help you with specific
-                            inquiries. You can ask me about his tech stack, view
-                            his notable works, request his general contact info,
-                            or type 'schedule a meeting' to book an interview!
+                            Sorry, that request did not match a supported topic.
+                            This is Jeje, Jericho's portfolio assistant, and Jeje
+                            can help with his tech stack, featured projects,
+                            contact details, general background, or a meeting
+                            request.
+                NextStep:
+                  DialogAction:
+                    Type: "EndConversation"
+
+            - Name: "AskGreeting"
+              Description: "Handles casual greetings and establishes the assistant identity."
+              SampleUtterances:
+                - Utterance: "yo"
+                - Utterance: "hi"
+                - Utterance: "hello"
+                - Utterance: "hey"
+                - Utterance: "greetings"
+                - Utterance: "good day"
+              IntentClosingSetting:
+                ClosingResponse:
+                  MessageGroupsList:
+                    - Message:
+                        PlainTextMessage:
+                          Value: >-
+                            Hi there! This is Jeje, Jericho's portfolio assistant.
+                            Jeje is trained to help you navigate his engineering
+                            profile. You can ask about his tech stack, notable
+                            works, contact information, or type 'schedule a
+                            meeting' to book an interview slot!
                 NextStep:
                   DialogAction:
                     Type: "EndConversation"
@@ -61,10 +85,34 @@ Resources:
                     - Message:
                         PlainTextMessage:
                           Value: >-
-                            I specialize in a modern full-stack ecosystem
+                            Jericho specializes in a modern full-stack ecosystem
                             including Next.js, React, Tailwind CSS, TypeScript,
-                            Supabase, and AWS Serverless infrastructure. I also
-                            utilize Blender for 3D modeling and animation.
+                            Supabase, and AWS Serverless infrastructure. He also
+                            uses Blender for 3D modeling and animation.
+                NextStep:
+                  DialogAction:
+                    Type: "EndConversation"
+
+            - Name: "AskDentaraProject"
+              Description: "Provides a focused summary of Jericho's flagship healthcare application, Dentara."
+              SampleUtterances:
+                - Utterance: "Tell me about Dentara"
+                - Utterance: "What is Dentara?"
+                - Utterance: "Show me your dental project"
+                - Utterance: "What healthcare apps have you built?"
+                - Utterance: "Dentara PWA"
+              IntentClosingSetting:
+                ClosingResponse:
+                  MessageGroupsList:
+                    - Message:
+                        PlainTextMessage:
+                          Value: >-
+                            Dentara is a healthtech Progressive Web App (PWA)
+                            engineered to seamlessly match dentistry students with
+                            patients needing specific clinical requirements.
+                            Jericho developed its business model and full-stack
+                            tech stack to optimize patient-student management
+                            pipelines.
                 NextStep:
                   DialogAction:
                     Type: "EndConversation"
@@ -81,10 +129,10 @@ Resources:
                     - Message:
                         PlainTextMessage:
                           Value: >-
-                            Some of my notable projects include Horizon AI (a
-                            multi-agent orchestration framework), Dentara (a
-                            healthtech PWA), a rapid Next.js + Supabase QR Code
-                            attendance tracker, and custom 3D web assets engineered
+                            Jericho's notable projects include Horizon AI, a
+                            multi-agent orchestration framework; Dentara, a
+                            healthtech PWA; a rapid Next.js and Supabase QR code
+                            attendance tracker; and custom 3D web assets engineered
                             in Blender.
                 NextStep:
                   DialogAction:
@@ -102,10 +150,10 @@ Resources:
                     - Message:
                         PlainTextMessage:
                           Value: >-
-                            You can email me directly at vardejericho@gmail.com,
-                            use the contact form on this page to trigger an
-                            instant inquiry, or find me on GitHub under my
-                            organization name, Sinkronizze.
+                            You can email Jericho directly at vardejericho@gmail.com,
+                            use the contact form on this page to trigger an instant
+                            inquiry, or find Jericho on GitHub under the Sinkronizze
+                            organization.
                 NextStep:
                   DialogAction:
                     Type: "EndConversation"
@@ -123,11 +171,11 @@ Resources:
                     - Message:
                         PlainTextMessage:
                           Value: >-
-                            My full name is Jericho F. Varde. I am a third-year
-                            Computer Science student at Pamantasan ng Cabuyao,
-                            working toward becoming a Cloud Engineer. You can
-                            reach me directly via email at vardejericho@gmail.com
-                            or explore my GitHub organization, Sinkronizze!
+                            Jericho F. Varde is a third-year Computer Science
+                            student at Pamantasan ng Cabuyao, working toward a
+                            Cloud Engineer path. You can reach Jericho directly via
+                            email at vardejericho@gmail.com or explore the
+                            Sinkronizze GitHub organization.
                 NextStep:
                   DialogAction:
                     Type: "EndConversation"
@@ -149,7 +197,7 @@ Resources:
                       MessageGroupsList:
                         - Message:
                             PlainTextMessage:
-                              Value: "What day would you like to schedule the meeting?"
+                              Value: "What day would you like to schedule the meeting with Jericho?"
                 - Name: "AppointmentTime"
                   SlotTypeName: "AMAZON.Time"
                   ValueElicitationSetting:
@@ -159,7 +207,7 @@ Resources:
                       MessageGroupsList:
                         - Message:
                             PlainTextMessage:
-                              Value: "What time works best for you?"
+                              Value: "What time works best for the meeting with Jericho?"
               SlotPriorities:
                 - Priority: 1
                   SlotName: "AppointmentDate"
@@ -171,9 +219,9 @@ Resources:
                     - Message:
                         PlainTextMessage:
                           Value: >-
-                            Perfect! I have noted down your request for a meeting
-                            on {AppointmentDate} at {AppointmentTime}. Jericho will
-                            review this and get back to you shortly.
+                            Perfect! The meeting request has been noted for
+                            {AppointmentDate} at {AppointmentTime}. Jericho will
+                            review the request and get back to you shortly.
                 NextStep:
                   DialogAction:
                     Type: "EndConversation"
@@ -191,10 +239,10 @@ Resources:
                     - Message:
                         PlainTextMessage:
                           Value: >-
-                            I'm functioning perfectly at 100% efficiency! Thanks
-                            for asking. I am currently keeping track of Jericho's
-                            portfolio, tech stack, and schedule. How can I help you
-                            navigate his work today?
+                            Jeje is functioning at 100% efficiency. Thanks for
+                            asking. Jeje is currently keeping track of Jericho's
+                            portfolio, tech stack, and schedule. How can Jeje help
+                            you navigate his work today?
                 NextStep:
                   DialogAction:
                     Type: "EndConversation"
@@ -212,11 +260,11 @@ Resources:
                     - Message:
                         PlainTextMessage:
                           Value: >-
-                            Think of me as your direct pipeline to Jericho's
-                            professional profile. You can ask me about his tech
-                            stack, view his notable engineering works, get his
-                            active contact channels, or type 'schedule a meeting'
-                            to seamlessly book an interview slot!
+                            Think of Jeje as the direct pipeline to Jericho's
+                            professional profile. You can ask about his tech stack,
+                            view his notable engineering works, get his active
+                            contact channels, or type 'schedule a meeting' to book
+                            an interview slot.
                 NextStep:
                   DialogAction:
                     Type: "EndConversation"
@@ -235,8 +283,9 @@ Resources:
                         PlainTextMessage:
                           Value: >-
                             You are very welcome! Helping you navigate Jericho's
-                            architecture is exactly what I'm built for. Let me know
-                            if you need any more details about his stack or availability.
+                            architecture is exactly what Jeje is built for. Let Jeje
+                            know if any more details are needed about his stack or
+                            availability.
                 NextStep:
                   DialogAction:
                     Type: "EndConversation"
@@ -254,9 +303,9 @@ Resources:
                         PlainTextMessage:
                           Value: >-
                             Why do Cloud Engineers love dark mode? Because light
-                            attract bugs! Speaking of avoiding bugs, would you like
-                            to take a look at Jericho's clean, fully-optimized Next.js
-                            and AWS works?
+                            attracts bugs. Speaking of avoiding bugs, would you like
+                            to take a look at Jericho's clean, fully optimized Next.js
+                            and AWS work?
                 NextStep:
                   DialogAction:
                     Type: "EndConversation"
@@ -275,11 +324,11 @@ Resources:
                     - Message:
                         PlainTextMessage:
                           Value: >-
-                            Jericho is happily taken by Kzelyn! She isn't just his
-                            girlfriend; she's also the brilliant marketing student
-                            who serves as the research strategist and lead data
-                            collector for his major development projects. They are
-                            a definitive full-stack duo!
+                            Jericho is happily taken by Kzelyn. She is not only his
+                            girlfriend but also the brilliant marketing student who
+                            serves as the research strategist and lead data collector
+                            for his major development projects. They are a definitive
+                            full-stack duo.
                 NextStep:
                   DialogAction:
                     Type: "EndConversation"
