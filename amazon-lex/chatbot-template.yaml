@@ -39,7 +39,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             That request did not map to a supported portfolio
                             intent.
 
@@ -90,7 +90,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             Greetings. Jeje is the official portfolio assistant for
                             Jericho and is configured to present his engineering
                             profile in a recruiter-ready format.
@@ -150,7 +150,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             Jericho specializes in a production-focused full-stack
                             architecture that combines Next.js, React, Tailwind CSS,
                             and TypeScript for high-velocity frontend delivery,
@@ -213,7 +213,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             Dentara is Jericho's healthtech Progressive Web App that
                             aligns dentistry students with clinical patients based on
                             treatment-specific requirements and case-fit criteria.
@@ -261,7 +261,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             Dentara is implemented as a mobile-first PWA with a
                             structured matching engine that connects dentistry
                             students to patient cases through requirement-based
@@ -322,7 +322,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             Horizon AI is Jericho's research-oriented multi-agent
                             refactoring initiative focused on coordinated reasoning,
                             role-specialized agent behavior, and controlled software
@@ -369,7 +369,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             Horizon AI orchestrates collaborative small language
                             models as role-specific agents for analysis, planning,
                             patch generation, verification, and quality governance.
@@ -429,7 +429,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             Lunas is Jericho's healthcare platform concept that
                             unifies patient-facing and provider-facing workflows into
                             a coherent digital care environment.
@@ -473,7 +473,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             The Lunas ecosystem is architected as a layered medical
                             software platform with domain separation across patient
                             engagement, clinician operations, and interoperable
@@ -517,7 +517,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             Jericho's featured engineering systems include Horizon AI
                             for multi-agent refactoring research, Dentara for
                             healthtech case matching, and additional full-stack
@@ -563,7 +563,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             Jeje can route all professional communications through
                             Jericho's unified contact hub.
 
@@ -604,7 +604,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             Jericho F. Varde is a Computer Science practitioner on a
                             cloud engineering trajectory, with portfolio systems
                             centered on full-stack development, applied AI workflow
@@ -692,7 +692,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             Meeting request recorded successfully for
                             {AppointmentDate} at {AppointmentTime}.
 
@@ -735,7 +735,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             Jeje is operating normally and remains fully available to
                             guide visitors through Jericho's portfolio system.
 
@@ -778,7 +778,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             Jeje functions as a structured portfolio navigation
                             interface for Jericho's professional engineering profile.
 
@@ -827,7 +827,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             Appreciation acknowledged.
 
                             Jeje remains available to continue with any next module,
@@ -865,7 +865,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             Technical humor module enabled:
                             Why do cloud engineers prefer dark mode? Because light
                             attracts bugs.
@@ -907,7 +907,7 @@ Resources:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
-                          Value: >-
+                          Value: |-
                             Jericho is in a committed relationship with Kzelyn.
 
                             She contributes strategic support as a marketing-focused
