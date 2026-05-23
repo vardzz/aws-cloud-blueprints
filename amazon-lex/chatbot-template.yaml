@@ -132,7 +132,7 @@ Resources:
                             filtering, responsive clinical onboarding flows, and
                             scalable service-layer integration for future analytics
                             and triage modules. Live deployment:
-                            https://dentara.vercel.app/
+                            [dentara.vercel.app](https://dentara.vercel.app/)
 
             - Name: "AskHorizonAI"
               Description: "Summary layer for Horizon AI, Jericho's multi-agent refactoring research initiative."
@@ -173,7 +173,7 @@ Resources:
                             contributes constrained outputs that feed a governed
                             refactoring loop, reducing regression risk while
                             preserving intent fidelity across large codebases.
-                            Repository: https://github.com/horizon-ai-code
+                            Repository: [Horizon AI on GitHub](https://github.com/horizon-ai-code)
 
             - Name: "AskLunasProject"
               Description: "Summary layer for Lunas, Jericho's healthcare platform concept."
@@ -212,7 +212,7 @@ Resources:
                             The design supports extensible integrations for records,
                             scheduling, and communication pathways under a scalable
                             cloud-ready foundation. Live website:
-                            https://lunas.software/
+                            [lunas.software](https://lunas.software/)
 
             - Name: "AskWorks"
               Description: "Outputs references to engineered system solutions."
