@@ -94,28 +94,125 @@ Resources:
                     Type: "EndConversation"
 
             - Name: "AskDentaraProject"
-              Description: "Provides a focused summary of Jericho's flagship healthcare application, Dentara."
+              Description: "Summary layer for Dentara, Jericho's flagship healthtech PWA."
               SampleUtterances:
                 - Utterance: "Tell me about Dentara"
                 - Utterance: "What is Dentara?"
-                - Utterance: "Show me your dental project"
-                - Utterance: "What healthcare apps have you built?"
                 - Utterance: "Dentara PWA"
+                - Utterance: "Give me a summary of Dentara"
               IntentClosingSetting:
                 ClosingResponse:
                   MessageGroupsList:
                     - Message:
                         PlainTextMessage:
                           Value: >-
-                            Dentara is a healthtech Progressive Web App (PWA)
-                            engineered to seamlessly match dentistry students with
-                            patients needing specific clinical requirements.
-                            Jericho developed its business model and full-stack
-                            tech stack to optimize patient-student management
-                            pipelines.
-                NextStep:
-                  DialogAction:
-                    Type: "EndConversation"
+                            Dentara is a healthtech Progressive Web App engineered
+                            to match dentistry students with clinical patients based
+                            on specific treatment requirements. Jericho designed the
+                            system to streamline student-patient coordination and
+                            improve clinical case accessibility.
+
+            - Name: "AskDentaraDetails"
+              Description: "Deep-dive layer for Dentara architecture, features, and live deployment."
+              SampleUtterances:
+                - Utterance: "Give me more details on Dentara"
+                - Utterance: "How does Dentara work?"
+                - Utterance: "Dentara features"
+                - Utterance: "Where can I see the link for Dentara?"
+                - Utterance: "dentara link"
+              IntentClosingSetting:
+                ClosingResponse:
+                  MessageGroupsList:
+                    - Message:
+                        PlainTextMessage:
+                          Value: >-
+                            Dentara uses a mobile-first PWA architecture with a
+                            structured matching workflow between dentistry students
+                            and patients. The system supports requirement-based case
+                            filtering, responsive clinical onboarding flows, and
+                            scalable service-layer integration for future analytics
+                            and triage modules. Live deployment:
+                            https://dentara.vercel.app/
+
+            - Name: "AskHorizonAI"
+              Description: "Summary layer for Horizon AI, Jericho's multi-agent refactoring research initiative."
+              SampleUtterances:
+                - Utterance: "Tell me about Horizon AI"
+                - Utterance: "What is Horizon AI?"
+                - Utterance: "Horizon AI summary"
+                - Utterance: "Explain Horizon AI project"
+              IntentClosingSetting:
+                ClosingResponse:
+                  MessageGroupsList:
+                    - Message:
+                        PlainTextMessage:
+                          Value: >-
+                            Horizon AI is a research-driven multi-agent code
+                            refactoring framework focused on modular reasoning and
+                            coordinated transformation pipelines. Jericho developed
+                            the concept to study how specialized agents can jointly
+                            improve software quality and modernization speed.
+
+            - Name: "AskHorizonAIDetails"
+              Description: "Deep-dive layer for Horizon AI orchestration logic and repository reference."
+              SampleUtterances:
+                - Utterance: "Tell me more about Horizon AI logic"
+                - Utterance: "Horizon AI details"
+                - Utterance: "How does Horizon AI refactor code?"
+                - Utterance: "Show me the link for Horizon AI"
+                - Utterance: "horizon ai github"
+              IntentClosingSetting:
+                ClosingResponse:
+                  MessageGroupsList:
+                    - Message:
+                        PlainTextMessage:
+                          Value: >-
+                            Horizon AI orchestrates collaborative Small Language
+                            Models as role-specific agents for analysis, planning,
+                            patching, validation, and quality control. Each agent
+                            contributes constrained outputs that feed a governed
+                            refactoring loop, reducing regression risk while
+                            preserving intent fidelity across large codebases.
+                            Repository: https://github.com/horizon-ai-code
+
+            - Name: "AskLunasProject"
+              Description: "Summary layer for Lunas, Jericho's healthcare platform concept."
+              SampleUtterances:
+                - Utterance: "What is Lunas?"
+                - Utterance: "Tell me about the Lunas project"
+                - Utterance: "Lunas medical app"
+              IntentClosingSetting:
+                ClosingResponse:
+                  MessageGroupsList:
+                    - Message:
+                        PlainTextMessage:
+                          Value: >-
+                            Lunas is a healthcare platform concept designed to unify
+                            patient-facing and provider-facing workflows into a
+                            coherent medical system experience. Jericho structured
+                            the concept around accessibility, continuity of care, and
+                            modular digital health services.
+
+            - Name: "AskLunasDetails"
+              Description: "Deep-dive layer for Lunas ecosystem architecture and live website reference."
+              SampleUtterances:
+                - Utterance: "Give me details on Lunas"
+                - Utterance: "How was Lunas built?"
+                - Utterance: "Show me the link for Lunas"
+                - Utterance: "lunas website"
+              IntentClosingSetting:
+                ClosingResponse:
+                  MessageGroupsList:
+                    - Message:
+                        PlainTextMessage:
+                          Value: >-
+                            The Lunas ecosystem is architected as a layered medical
+                            platform with core domains for patient engagement,
+                            clinician operations, and interoperable service modules.
+                            The design supports extensible integrations for records,
+                            scheduling, and communication pathways under a scalable
+                            cloud-ready foundation. Live website:
+                            https://lunas.software/
 
             - Name: "AskWorks"
               Description: "Outputs references to engineered system solutions."
