@@ -564,13 +564,10 @@ Resources:
                     - Message:
                         PlainTextMessage:
                           Value: |-
-                            Jeje can route all professional communications through
-                            Jericho's unified contact hub.
+                            Jeje can route all professional communications through Jericho's unified contact hub at vardejericho@gmail.com.
 
-                            [Gmail](mailto:vardejericho@gmail.com) | [LinkedIn](https://www.linkedin.com/in/vardz/) | [GitHub](https://github.com/vardzz)
-
-                            These channels are maintained for recruiter outreach,
-                            technical collaboration, and portfolio verification.
+                            - 'LinkedIn: [LinkedIn](https://www.linkedin.com/in/vardz/)'
+                            - 'GitHub: [GitHub](https://github.com/vardzz)'
 
             - Name: "AskGeneralInfo"
               Description: "Replies with baseline biographical and location profiles."
