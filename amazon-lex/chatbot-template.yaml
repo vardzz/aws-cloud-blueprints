@@ -499,15 +499,16 @@ Resources:
                           Value: |-
                             Jeje can route all professional communications through Jericho's unified contact hub.
 
-                            Gmail: vardejericho@gmail.com
+                            Email: vardejericho [at] gmail [dot] com
 
-                            - LinkedIn: [vardz](https://www.linkedin.com/in/vardz/)
-                            - GitHub: [vardzz](https://github.com/vardzz)
+                            LinkedIn: [vardz](https://www.linkedin.com/in/vardz/)
+                            GitHub: [vardzz](https://github.com/vardzz)
 
             - Name: "AskGeneralInfo"
               Description: "Replies with baseline biographical and location profiles."
               SampleUtterances:
                 - Utterance: "What is your full name?"
+                - Utterance: "What is jericho's full name?"
                 - Utterance: "Who are you?"
                 - Utterance: "Tell me about Jericho"
                 - Utterance: "Where do you study?"
