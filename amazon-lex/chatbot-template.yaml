@@ -560,7 +560,7 @@ Resources:
                           Value: 'Meeting request recorded successfully for {AppointmentDate} at {AppointmentTime}.\n\nJeje will forward the schedule details for Jericho''s review and the confirmation workflow will proceed through the configured follow-up channel.'
               NextStep:
                 DialogAction:
-                  Type: "Delegate"
+                  Type: "EndConversation"
 
             - Name: "AskBotWellBeing"
               Description: "Outputs how the bot is doing in a lighthearted manner."
