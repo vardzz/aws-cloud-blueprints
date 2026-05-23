@@ -25,7 +25,6 @@ Resources:
         ChildDirected: false
       IdleSessionTTLInSeconds: 300
       RoleArn: !GetAtt LexBotExecutionRole.Arn
-      TestBotAliasSettings: {}
       BotLocales:
         - LocaleId: "en_US"
           NluConfidenceThreshold: 0.30
