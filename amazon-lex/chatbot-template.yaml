@@ -575,83 +575,30 @@ Resources:
                     - Message:
                         PlainTextMessage:
                           Value: |-
-                            Jericho F. Varde is a Computer Science practitioner on a cloud engineering trajectory, with portfolio systems centered on full-stack development, applied AI workflow design, and product-focused software delivery.
+                            Jeje confirms that Jericho F. Varde is a 21-year-old third-year Computer Science student at Pamantasan ng Cabuyao (University of Cabuyao).
 
-                            His profile combines technical execution, architecture clarity, and practical deployment orientation suitable for engineering teams evaluating build-to-production readiness.
+                            His profile reflects disciplined academic progression, formal technical development, and a clear trajectory toward cloud-oriented software engineering.
 
-                            Jeje can provide deeper follow-up on his stack, project modules, and communication channels on request.
-
-            - Name: "BookMeeting"
-              Description: "Interactive scheduling pipeline utilizing contextual date/time extractions."
+            - Name: "AskAcademicProfile"
+              Description: "Provides a formal academic profile and study context for Jericho."
               FulfillmentCodeHook:
                 Enabled: false
               SampleUtterances:
-                - Utterance: "I want to schedule a meeting with Jericho"
-                - Utterance: "Can we set up a call?"
-                - Utterance: "Book an appointment"
-                - Utterance: "Are you available for an interview?"
-                - Utterance: "I would like to book a meeting"
-                - Utterance: "Can your scheduling system reserve a slot for me?"
-                - Utterance: "Please set an interview time with Jericho"
-                - Utterance: "I need to arrange a discussion with Jericho"
-                - Utterance: "Could I be scheduled for a meeting?"
-                - Utterance: "Can a call be booked on your calendar?"
-                - Utterance: "Book me in for a quick chat"
-                - Utterance: "Can we lock in a meeting slot?"
-                - Utterance: "I want to line up an interview session"
-                - Utterance: "Please add me to Jericho's meeting calendar"
-                - Utterance: "Can you set a consultation schedule?"
-                - Utterance: "I need a timeslot for a portfolio discussion"
-                - Utterance: "Let us schedule a meeting around your availability"
-                - Utterance: "Could an appointment be arranged for me?"
-                - Utterance: "Can this application schedule a meeting request?"
-                - Utterance: "I want to request a meeting time"
-                - Utterance: "schedule meeting"
-                - Utterance: "book meeting"
-                - Utterance: "meeting request"
-                - Utterance: "set up interview"
-                - Utterance: "arrange interview"
-                - Utterance: "book a call"
-                - Utterance: "schedule a call"
-                - Utterance: "reserve a slot"
-                - Utterance: "reserve time with Jericho"
-                - Utterance: "can i book calendar time"
-                - Utterance: "can i request a meeting slot"
-                - Utterance: "please schedule me"
-                - Utterance: "i need to book appointment"
-                - Utterance: "let's set a meeting"
-                - Utterance: "let us set an interview"
-                - Utterance: "can a meeting be scheduled"
-                - Utterance: "i want to meet Jericho"
-                - Utterance: "availability for meeting"
-                - Utterance: "book consultation"
-                - Utterance: "can this platform schedule a meeting"
-              Slots:
-                - Name: "AppointmentDate"
-                  SlotTypeName: "AMAZON.Date"
-                  ValueElicitationSetting:
-                    SlotConstraint: "Required"
-                    PromptSpecification:
-                      MaxRetries: 3
-                      MessageGroupsList:
-                        - Message:
-                            PlainTextMessage:
-                              Value: "What day would you like to schedule the meeting with Jericho?"
-                - Name: "AppointmentTime"
-                  SlotTypeName: "AMAZON.Time"
-                  ValueElicitationSetting:
-                    SlotConstraint: "Required"
-                    PromptSpecification:
-                      MaxRetries: 3
-                      MessageGroupsList:
-                        - Message:
-                            PlainTextMessage:
-                              Value: "What time works best for the meeting with Jericho?"
-              SlotPriorities:
-                - Priority: 1
-                  SlotName: "AppointmentDate"
-                - Priority: 2
-                  SlotName: "AppointmentTime"
+                - Utterance: "academic profile"
+                - Utterance: "study background"
+                - Utterance: "tell me about his education"
+                - Utterance: "what year is he in school"
+                - Utterance: "where does he study"
+                - Utterance: "what is his academic standing"
+                - Utterance: "student profile"
+                - Utterance: "jericho education"
+                - Utterance: "jericho school details"
+                - Utterance: "what university does he attend"
+                - Utterance: "academic details"
+                - Utterance: "college background"
+                - Utterance: "study details"
+                - Utterance: "profile academic"
+                - Utterance: "what is his course"
               IntentClosingSetting:
                 IsActive: true
                 ClosingResponse:
@@ -659,9 +606,59 @@ Resources:
                     - Message:
                         PlainTextMessage:
                           Value: |-
-                            Meeting request recorded successfully for {AppointmentDate} at {AppointmentTime}.
+                            Jeje confirms that Jericho F. Varde is a 21-year-old third-year Computer Science student at Pamantasan ng Cabuyao (University of Cabuyao).
 
-                            Jeje will forward the schedule details for Jericho's review and the confirmation workflow will proceed through the configured follow-up channel.
+                            His academic profile is aligned with structured software engineering growth, practical build experience, and a professional orientation toward production-ready digital systems.
+
+            - Name: "AskHackathons"
+              Description: "Provides a summary overview of Jericho's competitive innovation portfolio."
+              FulfillmentCodeHook:
+                Enabled: false
+              SampleUtterances:
+                - Utterance: "Have you joined any hackathons?"
+                - Utterance: "Recent hackathons"
+                - Utterance: "What competitions have you been in?"
+                - Utterance: "Have you won any awards?"
+                - Utterance: "hackathon details"
+                - Utterance: "any engineering competitions"
+                - Utterance: "competitions portfolio"
+              IntentClosingSetting:
+                IsActive: true
+                ClosingResponse:
+                  MessageGroupsList:
+                    - Message:
+                        PlainTextMessage:
+                          Value: |-
+                            Jericho has successfully completed one major hackathon milestone to date: SikapTala 2026, marking his first competitive engineering event.
+
+                            His team is currently registering for upcoming hackathons to continue scaling their development experience.
+
+                            You can ask for SikapTala details to see the official results.
+
+            - Name: "AskSikaptala"
+              Description: "Handles deep-dive operational metrics and live resource links for the SikapTala 2026 hackathon."
+              FulfillmentCodeHook:
+                Enabled: false
+              SampleUtterances:
+                - Utterance: "Tell me about SikapTala"
+                - Utterance: "SikapTala 2026"
+                - Utterance: "sikaptala"
+                - Utterance: "lunas hackathon"
+                - Utterance: "sikaptala results"
+                - Utterance: "what rank did you get in sikaptala"
+                - Utterance: "show me sikaptala details"
+              IntentClosingSetting:
+                IsActive: true
+                ClosingResponse:
+                  MessageGroupsList:
+                    - Message:
+                        PlainTextMessage:
+                          Value: |-
+                            Competing against 70+ teams nationwide across the Philippines, Jericho and his team advanced as national finalists, capturing Rank 8 overall.
+
+                            They engineered and presented Lunas: Your medical passport, always with you, a system-level architecture concept for patient data portability.
+
+                            View the official posts here: https://www.facebook.com/share/p/1LMHtMLLQK/ and https://www.linkedin.com/posts/vardz/sikaptala2026-hackathon-techinnovation-activity-7462675512679866368-J_bD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGMOSBABEcOfBmg_9mul4uzJTEr09CKFvJw
 
             - Name: "AskBotWellBeing"
               Description: "Outputs how the bot is doing in a lighthearted manner."
