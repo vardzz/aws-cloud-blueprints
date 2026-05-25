@@ -579,6 +579,32 @@ Resources:
 
                             His profile reflects disciplined academic progression, formal technical development, and a clear trajectory toward cloud-oriented software engineering.
 
+            - Name: "AskAvailability"
+              Description: "Handles recruiter and engineering manager inquiries regarding Jericho's graduation timeline, internship availability, and active career pursuit targets."
+              FulfillmentCodeHook:
+                Enabled: false
+              SampleUtterances:
+                - Utterance: "Are you open to internships?"
+                - Utterance: "When do you graduate?"
+                - Utterance: "Are you looking for full time cloud engineering positions?"
+                - Utterance: "What roles are you looking for right now?"
+                - Utterance: "hiring status"
+                - Utterance: "availability"
+                - Utterance: "are you looking for a job"
+                - Utterance: "is Jericho looking for junior roles"
+                - Utterance: "when are you available to start"
+                - Utterance: "graduation timeline"
+              IntentClosingSetting:
+                IsActive: true
+                ClosingResponse:
+                  MessageGroupsList:
+                    - Message:
+                        PlainTextMessage:
+                          Value: |-
+                            Jeje confirms that Jericho is currently a third-year Computer Science student advancing toward his senior year and final graduation milestones, while maintaining a rigorous focus on cloud infrastructure design and automated systems delivery.
+
+                            He is openly positioning himself for competitive Junior Cloud Engineer, DevOps Practitioner, or Full-Stack Web Developer contracts and internship placements where he can deploy production-focused infrastructure frameworks.
+
             - Name: "AskAcademicProfile"
               Description: "Provides a formal academic profile and study context for Jericho."
               FulfillmentCodeHook:
