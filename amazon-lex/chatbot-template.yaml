@@ -637,17 +637,15 @@ Resources:
                             His academic profile is aligned with structured software engineering growth, practical build experience, and a professional orientation toward production-ready digital systems.
 
             - Name: "AskHackathons"
-              Description: "Provides a summary overview of Jericho's competitive innovation portfolio."
+              Description: "Summary overview of Jericho's competitive development history."
               FulfillmentCodeHook:
                 Enabled: false
               SampleUtterances:
                 - Utterance: "Have you joined any hackathons?"
                 - Utterance: "Recent hackathons"
                 - Utterance: "What competitions have you been in?"
-                - Utterance: "Have you won any awards?"
-                - Utterance: "hackathon details"
-                - Utterance: "any engineering competitions"
                 - Utterance: "competitions portfolio"
+                - Utterance: "hackathon history"
               IntentClosingSetting:
                 IsActive: true
                 ClosingResponse:
@@ -655,11 +653,57 @@ Resources:
                     - Message:
                         PlainTextMessage:
                           Value: |-
-                            Jericho has successfully completed one major hackathon milestone to date: SikapTala 2026, marking his first competitive engineering event.
+                            Jeje notes that Jericho has successfully competed in two major hackathons this year. He made his national debut as a finalist at SikapTala 2026, followed immediately by his international debut at the Web Data Unlocked hackathon hosted by LABLAB.AI, which drew nearly 2,500 global developers.
 
-                            His team is currently registering for upcoming hackathons to continue scaling their development experience.
+                            Driven by continuous technical growth, his team remains actively engaged in registering for upcoming engineering sprints.
 
-                            You can ask for SikapTala details to see the official results.
+                            Visitors can ask specifically for 'SikapTala details' or 'GhostNet details' to explore each system's architecture.
+
+            - Name: "AskGhostnet"
+              Description: "Core utility summary of the GhostNet AI hackathon platform."
+              FulfillmentCodeHook:
+                Enabled: false
+              SampleUtterances:
+                - Utterance: "What is GhostNet?"
+                - Utterance: "Tell me about GhostNet AI"
+                - Utterance: "GhostNet summary"
+                - Utterance: "what did you build for lablab"
+                - Utterance: "web data unlocked project"
+                - Utterance: "ghostnet application"
+              IntentClosingSetting:
+                IsActive: true
+                ClosingResponse:
+                  MessageGroupsList:
+                    - Message:
+                        PlainTextMessage:
+                          Value: |-
+                            GhostNet AI is an autonomous security system engineered by Jericho and his team, DEVNUMERO, during the international Web Data Unlocked hackathon.
+
+                            The platform automates brand-impersonation monitoring by scanning the live web for phishing and typosquats, capturing verifiable evidence, and drafting machine-readable takedown reports.
+
+            - Name: "AskGhostnetDetails"
+              Description: "Technical deep-dive layer breaking down team metrics, individual roles, and ingestion pipelines."
+              FulfillmentCodeHook:
+                Enabled: false
+              SampleUtterances:
+                - Utterance: "GhostNet details"
+                - Utterance: "How was GhostNet built?"
+                - Utterance: "What was your role in GhostNet?"
+                - Utterance: "GhostNet architecture"
+                - Utterance: "DEVNUMERO team"
+                - Utterance: "ghostnet technical breakdown"
+              IntentClosingSetting:
+                IsActive: true
+                ClosingResponse:
+                  MessageGroupsList:
+                    - Message:
+                        PlainTextMessage:
+                          Value: |-
+                            Jericho competed internationally alongside 2,500 global developers in the Web Data Unlocked hackathon, marking his second competitive sprint of the year. He shares massive appreciation for his team DEVNUMERO, collaborating alongside Raziel, Kurt, Charles, and Paul, whose collective dedication brought this autonomous architecture to reality.
+
+                            Jericho served as the Technical Lead and Fullstack Engineer for the project. In this capacity, he designed the comprehensive end-to-end system architecture, established the core infrastructure base, and directed the five-member development team through the rapid sprint constraints.
+
+                            He engineered the advanced web scraping pipeline to intercept active phishing and typosquatting threats by pioneering the integration of Bright Data's live web infrastructure across Google and Bing. He then integrated the Gemini API to fully automate the deep structural analysis of scraped targets, proving his identity as a developer who stays hungry for fresh technologies and continuously expands his technical horizon.
 
             - Name: "AskSikaptala"
               Description: "Handles deep-dive operational metrics and live resource links for the SikapTala 2026 hackathon."
