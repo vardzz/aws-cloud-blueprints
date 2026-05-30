@@ -732,11 +732,14 @@ Resources:
                     - Message:
                         PlainTextMessage:
                           Value: |-
-                            Jericho competed internationally alongside 2,500 global developers in the Web Data Unlocked hackathon, marking his second competitive sprint of the year. He shares massive appreciation for his team DEVNUMERO, collaborating alongside Raziel, Kurt, Charles, and Paul, whose collective dedication brought this autonomous architecture to reality.
+                            Jericho competed at the Web Data Unlocked hackathon (≈2,500 participants) with team DEVNUMERO
+                            — Raziel, Kurt, Charles, and Paul. He served as Technical Lead and Fullstack Engineer,
+                            designing the end-to-end architecture and guiding the five-member team under sprint
+                            constraints.
 
-                            Jericho served as the Technical Lead and Fullstack Engineer for the project. In this capacity, he designed the comprehensive end-to-end system architecture, established the core infrastructure base, and directed the five-member development team through the rapid sprint constraints.
-
-                            He engineered the advanced web scraping pipeline to intercept active phishing and typosquatting threats by pioneering the integration of Bright Data's live web infrastructure across Google and Bing. He then integrated the Gemini API to fully automate the deep structural analysis of scraped targets, proving his identity as a developer who stays hungry for fresh technologies and continuously expands his technical horizon.
+                            He implemented a web-scraping ingestion pipeline using Bright Data to collect live signals
+                            and integrated the Gemini API for automated analysis. The system detects phishing and
+                            typosquats, captures verifiable evidence, and generates machine-readable takedown reports.
 
             - Name: "AskSikaptala"
               Description: "Handles deep-dive operational metrics and live resource links for the SikapTala 2026 hackathon."
