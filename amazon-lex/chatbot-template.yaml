@@ -732,7 +732,7 @@ Resources:
                     - Message:
                         PlainTextMessage:
                           Value: |-
-                            Jericho competed at the Web Data Unlocked hackathon (≈2,500 participants) with team DEVNUMERO
+                            Jericho competed at the Web Data Unlocked hackathon (almost 2,500 participants) with team DEVNUMERO
                             — Raziel, Kurt, Charles, and Paul. He served as Technical Lead and Fullstack Engineer,
                             designing the end-to-end architecture and guiding the five-member team under sprint
                             constraints.
